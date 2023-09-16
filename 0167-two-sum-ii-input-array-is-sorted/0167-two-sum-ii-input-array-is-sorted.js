@@ -11,6 +11,7 @@ const twoSum = function(numbers, target) {
     
     while (true) {
         const sumTwoPointer = numbers[firstPointer] + numbers[secondPointer];
+        
         if ( sumTwoPointer === target) {
             result.push(firstPointer + 1, secondPointer + 1)
             
