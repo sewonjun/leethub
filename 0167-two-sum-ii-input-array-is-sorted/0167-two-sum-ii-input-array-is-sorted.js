@@ -10,21 +10,20 @@ const twoSum = function(numbers, target) {
     let secondPointer = numbers.length - 1;
     
     while (true) {
-        const sumTwoPointer = numbers[firstPointer] + numbers[secondPointer];
         
-        if ( sumTwoPointer === target) {
+        if ( numbers[firstPointer] + numbers[secondPointer] === target) {
             result.push(firstPointer + 1, secondPointer + 1)
             
             break;
         }
         
-        if (sumTwoPointer < target) {
+        if (numbers[firstPointer] + numbers[secondPointer] < target) {
             firstPointer++;
             
             continue;
         }
         
-        if (sumTwoPointer > target) {
+        if (numbers[firstPointer] + numbers[secondPointer] > target) {
             secondPointer--;
             
             continue;
