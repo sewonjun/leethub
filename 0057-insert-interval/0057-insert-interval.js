@@ -8,8 +8,20 @@ const insert = function(intervals, newInterval) {
     
     const needSortingArray = []; 
     
+    function isBetweenInterval(arr) {
+        if (arr[0] <= newInterval[0] && newInterval[0] <= arr[1]) return true;
+        
+        if (arr[0] <= newInterval[1] && newInterval[1] <= arr[1]) return true;
+        
+        if (newInterval[0] <= arr[0] && arr[0] <= newInterval[1]) return true;
+        
+        if (newInterval[0] <= arr[1] && arr[1] <= newInterval[1]) return true;
+        
+        return false;
+    }
+    
     intervals.forEach(arr => {
-        if (arr[0] <= newInterval[0] && newInterval[0] <= arr[1] || arr[0] <= newInterval[1] && newInterval[1] <= arr[1] || newInterval[0] <= arr[0] &&  arr[0] <= newInterval[1] || newInterval[0] <= arr[1] &&  arr[1] <= newInterval[1]) {
+        if (isBetweenInterval(arr)) {
             return needSortingArray.push(...arr);
         }
         
