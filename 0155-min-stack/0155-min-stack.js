@@ -1,7 +1,6 @@
 
 var MinStack = function() {
-    const result = [];
-    this.result = result;
+    this.result = [];
 };
 
 /** 
@@ -9,14 +8,15 @@ var MinStack = function() {
  * @return {void}
  */
 MinStack.prototype.push = function(val) {
-  this.result.push(val);  
+    this.result.push(val); 
+    return;
 };
 
 /**
  * @return {void}
  */
 MinStack.prototype.pop = function() {
-    this.result.pop();
+    return this.result.pop();
 };
 
 /**
