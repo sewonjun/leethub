@@ -3,7 +3,6 @@
  * @return {string}
  */
 var longestCommonPrefix = function(strs) {
-    'use strict';
     if (strs === undefined || strs.length === 0) { return ''; }
     
     return strs.reduce((prev, next) => {
