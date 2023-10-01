@@ -22,29 +22,26 @@ const specialRomanInteger = {
 }
     
 var romanToInt = function(s) {
-  let copyS = s;
-  console.log("왜..", copyS);
-
+    let copyS = s;
     let result = 0;
     while (true) {
         const specialRoman = checkSpecialRoman(copyS);
-        console.log(specialRoman);
+
         if (!specialRoman) break;
 
         copyS = copyS.replace(specialRoman, "");
-      console.log(copyS);
         result += specialRomanInteger[specialRoman];
-      console.log(result);
     }
     
     copyS.split("").forEach(el => result += romanInteger[el]);
-    console.log(result);
+
     return result;
 };
     
 function checkSpecialRoman(string) {
     const specialRoman = Object.keys(specialRomanInteger);
-  let result;
+    let result;
+
     for (let roman of specialRoman) {
         if (string.includes(roman)) return result = roman;
     }
