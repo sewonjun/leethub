@@ -18,7 +18,7 @@ var reverseList = function(head) {
     prev.next = null;
 
     while (cur !== null) {
-        var next = cur.next;
+        let next = cur.next;
         cur.next = prev;
         prev = cur;
         cur = next;
