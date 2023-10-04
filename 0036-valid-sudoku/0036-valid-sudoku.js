@@ -23,7 +23,7 @@ function threeBlockSudoku(board) {
     let result = true;
     let j = 0;
     
-    while(j < 9) {
+    while (j < 9) {
         if (!result) break;
     
         for (let i = 0; i < 9; i+=3) {
