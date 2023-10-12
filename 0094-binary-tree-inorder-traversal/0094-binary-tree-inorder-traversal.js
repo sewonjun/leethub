@@ -15,9 +15,11 @@ var inorderTraversal = function(root) {
     
     function traversal(node) {
         if (!node) return;
-        console.log(node.val)
+        
         if (node.left) traversal(node.left);
+        
         result.push(node.val);
+        
         if (node.right) traversal(node.right);
     }
     
