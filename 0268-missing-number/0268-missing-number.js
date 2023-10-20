@@ -9,5 +9,5 @@ var missingNumber = function(nums) {
         if (i !== sortedNums[i]) return i;
     }
     
-    return (sortedNums.at(-1) + 1)
+    return sortedNums.at(-1) + 1;
 };
