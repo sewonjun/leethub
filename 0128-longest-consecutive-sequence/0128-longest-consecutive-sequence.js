@@ -14,21 +14,6 @@ var longestConsecutive = function(nums) {
     const results = [];
     
     for (let i = 1; i < nums.length; i++) {
-        if (i === nums.length -1 && ((sortedNums[i - 1] + 1 === sortedNums[i]))) {
-            endSequence = i;
-            results.push(endSequence - startSequence - duplicateNums + 1);
-            break;
-        }
-        
-        if (i === nums.length - 1 && sortedNums[i - 1] === sortedNums[i]) {
-            duplicateNums++;
-            endSequence = i;
-            
-            results.push(endSequence - startSequence - duplicateNums + 1);
-            
-            break;
-        }
-        
         if (sortedNums[i - 1] === sortedNums[i]) {
             duplicateNums++;
             endSequence = i;
@@ -45,6 +30,7 @@ var longestConsecutive = function(nums) {
             duplicateNums = 0;
         }
     }
+    results.push(endSequence - startSequence - duplicateNums + 1);
     
     return Math.max(...results)
 };
