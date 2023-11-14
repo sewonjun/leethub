@@ -2,7 +2,7 @@
  * @param {number[]} nums
  * @return {number[]}
  */
-var smallerNumbersThanCurrent = function(nums) {
+const smallerNumbersThanCurrent = function(nums) {
     const result = [];
     
     nums.forEach((el, index) => {
