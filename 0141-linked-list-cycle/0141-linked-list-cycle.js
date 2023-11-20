@@ -10,17 +10,11 @@
  * @param {ListNode} head
  * @return {boolean}
  */
-var hasCycle = function(head) {
-    let visitedNodes = new Set();
-    let currentNode = head;
-  
-    while (currentNode !== null) {
-        if (visitedNodes.has(currentNode)) {
-            return true;
-        }
-      
-        visitedNodes.add(currentNode);
-        currentNode = currentNode.next;
+const hasCycle = function(head) {
+    while(head){
+        if(head.visited) return true;
+        head.visited = 1;
+        head = head.next;
     }
     return false;
 };
