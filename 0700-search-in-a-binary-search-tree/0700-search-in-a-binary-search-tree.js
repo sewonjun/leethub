@@ -11,7 +11,7 @@
  * @param {number} val
  * @return {TreeNode}
  */
-var searchBST = function(root, val) {
+const searchBST = function(root, val) {
   let currentRoot = root;
   let result = null;
   
