@@ -2,7 +2,7 @@
  * @param {number[]} nums
  * @return {number}
  */
-var findMin = function(nums) {
+const findMin = function(nums) {
   let result = null;
   
   for (let i = 0; i < nums.length - 1; i++) {
