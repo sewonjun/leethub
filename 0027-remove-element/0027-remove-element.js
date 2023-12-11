@@ -5,7 +5,6 @@
  */
 const removeElement = function(nums, val) {
   let count = 0;
-  
   let target = nums.length - 1;
   let curPoint = 0;
   
