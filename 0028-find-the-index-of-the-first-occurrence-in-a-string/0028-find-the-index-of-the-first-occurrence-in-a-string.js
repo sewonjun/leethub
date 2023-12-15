@@ -6,7 +6,6 @@
 const strStr = function(haystack, needle) {
   let haystackIdx = 0;
   let needleIdx = 0;
-  let result = -1;
   
   while (haystackIdx < haystack.length) {
     if (haystack[haystackIdx] === needle[needleIdx]) {
@@ -20,11 +19,11 @@ const strStr = function(haystack, needle) {
     }
     
     if (needleIdx === needle.length) {
-      result = haystackIdx - needle.length;
+      return result = haystackIdx - needle.length;
       
-      break;
+      // break;
     };
   }
   
-  return result;
+  return -1;
 };
