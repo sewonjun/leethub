@@ -20,8 +20,6 @@ const strStr = function(haystack, needle) {
     
     if (needleIdx === needle.length) {
       return result = haystackIdx - needle.length;
-      
-      // break;
     };
   }
   
