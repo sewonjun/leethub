@@ -14,14 +14,12 @@ var searchInsert = function(nums, target) {
   if (nums.at(-1) === target) return nums.length - 1;
   
   while (true) {
-    console.log(curIdx);
     if (curIdx < 0 || curIdx >= nums.length) break;
     
     if (nums[curIdx] === target) break; 
     
     if (nums[curIdx] > target) {
       if (nums[curIdx - 1] < target) {
-        // curIdx;
         break;
       };
       
@@ -32,10 +30,12 @@ var searchInsert = function(nums, target) {
     if (nums[curIdx] < target) {
       if (nums[curIdx + 1] > target) {
         curIdx++;
+        
         break;
       };
       
       curIdx++;
+      
       continue;
     }
   }
