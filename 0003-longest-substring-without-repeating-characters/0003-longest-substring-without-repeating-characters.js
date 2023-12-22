@@ -8,7 +8,6 @@ var lengthOfLongestSubstring = function(s) {
   if (!s.trim().length || s.length === 1) return 1;
   
   let longestString = 0;
-  let ableSubString = 0;
   let subString = {};
   let count = 0;
   let targetIdx = 0;
@@ -17,8 +16,11 @@ var lengthOfLongestSubstring = function(s) {
     if ((targetIdx + count)  > s.length - 1) {
       break;
     }
+    
     if (subString[s[targetIdx + count]] === 1) {
-      if (ableSubString < count) ableSubString = count;
+      
+      if (longestString < count) longestString = count;
+      
       subString = {};
       count = 0;
       targetIdx++;
@@ -28,21 +30,7 @@ var lengthOfLongestSubstring = function(s) {
     }
   }
   
- if (ableSubString < count) ableSubString = count;
+  if (longestString < count) longestString = count;
   
-  // for(let i = 0; i < s.length; i++) { 
-  //   console.log(i, count);
-  //   if (subString[s[i]] === 1) {
-  //     ableSubString.push(count);
-  //     subString = {};
-  //     count = 0;
-  //     i--;
-  //   } else {
-  //     subString[s[i]] = 1;
-  //     count++;
-  //   }
-  // }
-  // ableSubString.push(count);
-
-  return ableSubString;
+  return longestString;
 };
