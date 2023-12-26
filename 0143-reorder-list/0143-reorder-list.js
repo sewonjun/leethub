@@ -44,5 +44,4 @@ var reorderList = function(head) {
     reversedList = reversedList.next;
     count -= 2;
   }
-
 };
