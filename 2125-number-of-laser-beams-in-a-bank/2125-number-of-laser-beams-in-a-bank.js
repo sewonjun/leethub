@@ -10,12 +10,11 @@ var numberOfBeams = function(bank) {
     const beamCount = arr.split("").filter(el => el === "1").length;
 
     if (beamCount > 0) {
-      if (currentBeamCount === null) {
-        currentBeamCount = beamCount;
-      } else {
-       result += currentBeamCount * beamCount;
-       currentBeamCount = beamCount;
+      if (currentBeamCount !== null) {
+        result += currentBeamCount * beamCount;
       }
+      
+      currentBeamCount = beamCount;
     }
   })
   
