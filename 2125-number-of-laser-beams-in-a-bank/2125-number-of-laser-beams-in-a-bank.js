@@ -2,7 +2,7 @@
  * @param {string[]} bank
  * @return {number}
  */
-var numberOfBeams = function(bank) {
+const numberOfBeams = function(bank) {
   let result = 0;
   let currentBeamCount = null;
   
