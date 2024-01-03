@@ -9,7 +9,7 @@ var numberOfBeams = function(bank) {
   bank.forEach((arr) => {
     const beamCount = arr.split("").filter(el => el === "1").length;
 
-    if (beamCount > 0) {
+    if (beamCount) {
       if (currentBeamCount !== null) {
         result += currentBeamCount * beamCount;
       }
