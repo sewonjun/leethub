@@ -5,6 +5,7 @@
 const maxSubArray = function(nums) {
   let largestSum = Math.max(...nums); 
   let curSum = 0;
+  
   nums.forEach(num => {
     curSum += num;
     
