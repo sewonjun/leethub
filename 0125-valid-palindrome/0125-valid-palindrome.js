@@ -13,20 +13,16 @@ const isPalindrome = function(s) {
   
     let frontIdx = 0;
     let backIdx = filteredS.length - 1;
-    let result = null;
   
     while (frontIdx <= backIdx) {
       if (filteredS[frontIdx].toLowerCase() !== filteredS[backIdx].toLowerCase()) {
-        result = false;
-        
-        break;
+        return false;
+        // break;
       }
       
       frontIdx++;
       backIdx--;
     }
   
-    if (result === null) return true;
-  
-    return false;
+    return true;
 };
