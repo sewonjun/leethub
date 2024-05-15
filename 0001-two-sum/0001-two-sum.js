@@ -28,8 +28,7 @@ const twoSum = function(nums, target) {
   let lastIndex = nums.length - 1;
   
   while (firstIndex < lastIndex) {
-    const sum = nums[firstIndex] + nums[lastIndex];
-    if (sum === target) break;
+    if (nums[firstIndex] + nums[lastIndex] === target) break;
     
     if (lastIndex - 1 === firstIndex) {
       firstIndex++;
