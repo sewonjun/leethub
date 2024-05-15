@@ -2,6 +2,8 @@
  * @param {string} s
  * @return {boolean}
  */
+
+// "[({)]"
 var isValid = function(s) {
     const stack = [];
     
@@ -10,9 +12,8 @@ var isValid = function(s) {
         "[":"]",
         "{":"}"
     }
-    const splitedS = s.split("");
     
-    for (let el of splitedS) {
+    for (let el of s) {
         if (el === "(" || el === "[" || el === "{") {
             stack.push(el);
         }
