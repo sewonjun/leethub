@@ -19,14 +19,14 @@ function mergeTwoLists(list1: ListNode | null, list2: ListNode | null): ListNode
   while (curList1 || curList2) {
     if (curList1 === null) {
       curNode.next = curList2;
-      // curList2 = null;
+      curList2 = null;
       
       break;
     }
     
     if (curList2 === null) {
       curNode.next = curList1;
-      // curList1 = null;
+      curList1 = null;
       
       break;
     }
