@@ -32,8 +32,10 @@ var mergeTwoLists = function(list1, list2) {
     if (curList2 === null) {
       curNode.next = curList1;
       curList1 = null;
+      
       break;
     }
+    
     if (curList1?.val === curList2?.val) {
       curNode.next = new ListNode(curList1.val);
       curNode = curNode.next;
