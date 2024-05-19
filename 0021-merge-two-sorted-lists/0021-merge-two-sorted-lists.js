@@ -16,7 +16,7 @@ function ListNode(val, next) {
 }
 
 var mergeTwoLists = function(list1, list2) {
-  let mergedList = new ListNode();
+  const mergedList = new ListNode();
   let curNode = mergedList;
   let curList1 = list1;
   let curList2 = list2;
