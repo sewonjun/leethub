@@ -10,23 +10,61 @@
  * @param {ListNode} list2
  * @return {ListNode}
  */
+function ListNode(val, next) {
+  this.val = (val === undefined ? 0 : val);
+  this.next = (next === undefined ? null : next);
+}
+
 var mergeTwoLists = function(list1, list2) {
-    const mergedList = {val: -1, next: null};
-    let current = mergedList;
-    
-    while (list1 && list2) {
-        if (list1.val <= list2.val) {
-            current.next = list1
-            list1 = list1.next;
-        } else {
-            current.next = list2;
-            list2 = list2.next;
-        }
-        
-        current = current.next;
+  let mergedList = new ListNode();
+  let curNode = mergedList;
+  let curList1 = list1;
+  let curList2 = list2;
+  
+  while (curList1 || curList2) {
+    if (curList1 === null) {
+      curNode.next = curList2;
+      curList2 = null;
+      
+      break;
     }
     
-    current.next = list1 ? list1 : list2;
+    if (curList2 === null) {
+      curNode.next = curList1;
+      curList1 = null;
+      break;
+    }
+    if (curList1?.val === curList2?.val) {
+      curNode.next = new ListNode(curList1.val);
+      curNode = curNode.next;
+      curNode.next = new ListNode(curList2.val);
+      curNode = curNode.next;
+
+      curList1 = curList1.next;
+      curList2 = curList2.next;
+      
+      continue;
+    }
+
     
-    return mergedList.next;
+    if (curList1?.val < curList2?.val) {
+      
+      curNode.next = new ListNode(curList1.val);
+      curNode = curNode.next;
+
+      curList1 = curList1.next;
+      
+      continue;
+    }
+    
+    if (curList1?.val > curList2?.val) {
+      curNode.next = new ListNode(curList2.val);
+      curNode = curNode.next;
+
+      curList2 = curList2.next;
+    }
+  }
+  
+  return mergedList.next;
 };
+  
