@@ -13,15 +13,16 @@
  */
 
 function invertTree(root: TreeNode | null): TreeNode | null {
-    //왼쪽 노드들 각장 invert하고, 오른쪽 invert해서 붙이기..? 
   if (!root) return root;
   
-  const left = root?.left ? invertNode(root.left): null;
-  const right = root?.right ? invertNode(root.right) : null;
+  // const left = root?.left ? invertNode(root.left): null;
+  // const right = root?.right ? invertNode(root.right) : null;
   // console.log(left, right);
 
-  root.right = left;
-  root.left = right;
+  // root.right = left;
+  // root.left = right;
+  
+  invertNode(root);
 
   return root;
 };
@@ -43,3 +44,21 @@ function invertNode(treenode) {
   
   return treenode;
 }
+
+// const invertTree = function(root) {
+//   a(root);
+//   return root;
+// };
+
+// const a = (root) => {
+//   if (!root) {
+//     return;
+//   }
+  
+//   let temp = root.left;
+//   root.left = root.right;
+//   root.right = temp;
+  
+//   invertTree(root.left);
+//   invertTree(root.right);
+// };
