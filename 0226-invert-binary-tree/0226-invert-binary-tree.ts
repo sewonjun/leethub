@@ -15,13 +15,6 @@
 function invertTree(root: TreeNode | null): TreeNode | null {
   if (!root) return root;
   
-  // const left = root?.left ? invertNode(root.left): null;
-  // const right = root?.right ? invertNode(root.right) : null;
-  // console.log(left, right);
-
-  // root.right = left;
-  // root.left = right;
-  
   invertNode(root);
 
   return root;
@@ -29,7 +22,8 @@ function invertTree(root: TreeNode | null): TreeNode | null {
 
 
 function invertNode(treenode) {
-  // console.log("treenode", treenode);
+  if (!treenode) return;
+  
   const temp = treenode?.left ? treenode.left : null;
   treenode.left = treenode.right;
   treenode.right = temp;
@@ -41,24 +35,4 @@ function invertNode(treenode) {
   if (treenode.right !== null) {
     invertNode(treenode.right);
   }
-  
-  return treenode;
 }
-
-// const invertTree = function(root) {
-//   a(root);
-//   return root;
-// };
-
-// const a = (root) => {
-//   if (!root) {
-//     return;
-//   }
-  
-//   let temp = root.left;
-//   root.left = root.right;
-//   root.right = temp;
-  
-//   invertTree(root.left);
-//   invertTree(root.right);
-// };
