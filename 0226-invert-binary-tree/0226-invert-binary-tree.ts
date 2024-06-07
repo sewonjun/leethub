@@ -13,26 +13,21 @@
  */
 
 function invertTree(root: TreeNode | null): TreeNode | null {
-  if (!root) return root;
+  if (root === null) return root;
   
-  invertNode(root);
-
+  if (root?.left === null && root?.right === null) {
+    return root;
+  }
+  
+  const temp = root?.left;
+  
+  root.left = root?.right;
+  
+  root.right = temp;
+  
+  if (root?.left) invertTree(root.left);
+  
+  if (root?.right) invertTree(root.right);
+  
   return root;
 };
-
-
-function invertNode(treenode) {
-  if (!treenode) return;
-  
-  const temp = treenode?.left ? treenode.left : null;
-  treenode.left = treenode.right;
-  treenode.right = temp;
-  
-  if (treenode.left !== null) {
-    invertNode(treenode.left);
-  }
-  
-  if (treenode.right !== null) {
-    invertNode(treenode.right);
-  }
-}
