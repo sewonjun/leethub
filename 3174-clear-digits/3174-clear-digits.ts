@@ -1,21 +1,15 @@
 function clearDigits(s: string): string {
-  let result;
+  const stack = [];
   
   for (let i = 0; i < s.length; i++) {
     const char = parseInt(s[i], 10);
     
-    if (!isNaN(char)) {
-      if (i > 1) {
-        result = s.slice(0, i - 1) + s.slice(i + 1);
-        
-        return clearDigits(result);
-      } else {
-        result = s.slice(i + 1);
-        
-        return clearDigits(result);
-      }
+    if (isNaN(char)) {
+      stack.push(s[i]);
+    } else {
+      stack.pop();
     }
   }
   
-  return s;
+  return stack.join("");
 };
