@@ -10,15 +10,14 @@ function subsets(nums: number[]): number[][] {
 function getSubsets(origin: [] | number[], subArray: number[]) {
   if (subArray.length === 1) return [[...origin, ...subArray]];
 
-  const ableCombination = [];
+  const ableCombination = []; // [1, 2], [1, 2, 3], [1, 3] 
 
   for(let i = 0; i < subArray.length; i++) {
     const restArray = subArray.slice(i + 1); 
     ableCombination.push([...origin, subArray[i]]);
-;
+    
     if (restArray.length) {
       const nextCombination = getSubsets([...origin, subArray[i]], restArray);
-
       ableCombination.push(...nextCombination);
     }
   }
