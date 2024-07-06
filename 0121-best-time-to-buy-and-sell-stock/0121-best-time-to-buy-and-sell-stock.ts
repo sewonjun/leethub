@@ -1,13 +1,15 @@
 function maxProfit(prices: number[]): number {
-  let maximizedProfit = 0;
-  let minPrice = prices[0];
-
-  for (let i = 0; i < prices.length; i++) {
-    const price = prices[i] - minPrice;
-
-    maximizedProfit = Math.max(price, maximizedProfit);
-    minPrice = Math.min(minPrice, prices[i]);
+  let result = 0;
+  let minBuy = prices[0];
+  let maxSell = prices[1];
+  
+  for (let i = 1; i < prices.length; i ++) {
+    result = Math.max(prices[i] - minBuy, result);
+    minBuy = Math.min(prices[i], minBuy);
   }
-
-  return maximizedProfit;
+  
+  return result;
 };
+
+//앞에가 뒤에보다 크면, 무효 
+// 
