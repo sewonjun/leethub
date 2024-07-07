@@ -22,18 +22,15 @@ var solution = function(isBadVersion) {
       let badVersion;
       
       while(true) {
-        if (!isBadVersion(pivot) && badVersion) {
-          break;
-        }
+        if (!isBadVersion(pivot) && badVersion) break;
+        
         if (isBadVersion(pivot)) {
           //이미 나쁜 버전은 찾았고, 시작점을 찾아야 함.
           badVersion = true;
           
           pivot--;
         } else {
-          // console.log(pivot);
           pivot = pivot + Math.ceil((n - pivot)/2);
-          // pivot++;
         }
       }
       
