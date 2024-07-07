@@ -31,7 +31,7 @@ var solution = function(isBadVersion) {
           
           pivot--;
         } else {
-          console.log(pivot);
+          // console.log(pivot);
           pivot = pivot + Math.ceil((n - pivot)/2);
           // pivot++;
         }
